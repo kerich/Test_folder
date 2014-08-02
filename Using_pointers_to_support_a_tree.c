@@ -59,7 +59,7 @@ void insertNode(TreeNode **realroot, COMPARE compare, void* data) {
     node->data = data;
     node->left = NULL;
     node->right = NULL;
-	TreeNode *root = *realroot;
+    TreeNode *root = *realroot;
 
     if(root == NULL) {
         *realroot = node;
@@ -107,8 +107,8 @@ void inOrder(TreeNode *root, DISPLAY display);
 void inOrder(TreeNode *root, DISPLAY display) {
     if(root != NULL){
 		inOrder(root->left, display);
-        display(root->data);
-        inOrder(root->right, display);
+                display(root->data);
+                inOrder(root->right, display);
     }
 }
 
@@ -117,7 +117,7 @@ void postOrder(TreeNode *root, DISPLAY display) {
 	if(root != NULL) {
 		postOrder(root->left, display);
 		postOrder(root->right, display);
-        display(root->data);
+                display(root->data);
 	}
 }
 
@@ -142,9 +142,9 @@ int main(void) {
 	insertNode(&tree, (COMPARE) compareEmployee, susan);
 
 	printf("pre-Order:\n");
-    preOrder(tree, (DISPLAY) displayEmployee);
+        preOrder(tree, (DISPLAY) displayEmployee);
 	printf("in-Order:\n");
-    inOrder(tree, (DISPLAY) displayEmployee);
+        inOrder(tree, (DISPLAY) displayEmployee);
 	printf("post-Order:\n");
 	postOrder(tree, (DISPLAY) displayEmployee);
 
